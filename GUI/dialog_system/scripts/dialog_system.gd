@@ -78,7 +78,10 @@ func advance_dialog() -> void:
 ## Show the dialog UI
 func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	is_active = true
-	if _items[0] is DialogCutscene:
+	#dialog_ui.visible = true
+	if _items.size() == 0:
+		dialog_ui.visible = false
+	elif _items[0] is DialogCutscene:
 		dialog_ui.visible = false
 	else:
 		dialog_ui.visible = true
